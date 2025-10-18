@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thanh toán</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+   
+
+    .checkout-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 40px auto;
+    color: #fff;
+    }
+
+    /* ====== CỘT TRÁI: THÔNG TIN THANH TOÁN ====== */
+    .checkout-left {
+    flex: 1.4;
+    background-color: #1e1e1e; /* nền tối hơn một chút */
+    border: 2px solid #d11b6b; /* viền hồng đậm theo tông site */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 8px #000;
+    }
+
+    .checkout-left h3 {
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffb3c6;
+    }
+
+    .form-group {
+    margin-bottom: 15px;
+    }
+
+    label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #ffb3c6;
+    }
+
+    input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #2a2a2a;
+    color: #fff;
+    }
+
+    textarea {
+    resize: vertical;
+    height: 80px;
+    }
+
+    .address-checkbox {
+    margin: 15px 0;
+    background-color: #d11b6b;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    }
+
+
+    /* ====== CỘT PHẢI: ĐƠN HÀNG ====== */
+    .checkout-right {
+    flex: 1;
+    background-color: #1e1e1e;
+    border: 2px solid #ffb3c6;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 0 8px #000;
+    }
+
+    .checkout-right h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffb3c6;
+    }
+
+    .order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+    }
+
+    .order-item strong {
+    font-weight: bold;
+    color: #fff;
+    }
+
+    .summary {
+    margin-top: 10px;
+    font-size: 14px;
+    }
+
+    .summary div {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+    color: #fff;
+    }
+
+    .summary .total {
+    font-weight: bold;
+    color: #d11b6b;
+    font-size: 16px;
+    margin-top: 10px;
+    }
+
+    .payment-box {
+    margin-top: 15px;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #eee;
+    }
+
+    .btn-order {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #d11b6b;
+    border: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    }
+
+    .btn-order:hover {
+    background-color: white;
+    color: #d11b6b;
+    }
+
+    .back-cart {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #ffb3c6;
+    text-decoration: none;
+    font-size: 14px;
+    }
+
+    .back-cart:hover {
+    text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+     <header>
+      <img src="img/logo.webp" alt="logo">
+    </header>
+
+    <nav>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li>
+            <a href="sanpham.html">SẢN PHẨM</a>
+            <ul>
+              <li><a href="menu_hoakhaitruong.html">Hoa khai trương để bàn</a></li>
+              <li><a href="menu_hoasinhnhat.html">Hoa sinh nhật</a></li>
+              <li><a href="menu_hoahong.html">Hoa hồng</a></li>
+              <li><a href="menu_hoasen.html">Hoa sen</a></li>
+              <li><a href="menu_hoadongtien.html">Hoa đồng tiền</a></li>
+            </ul>
+          </li>
+          <li><a href="lienhe.html">LIÊN HỆ</a></li>
+          <li><a href="hoidap.html">HỎI & ĐÁP</a></li>
+          <li><a href="gopy.html">GÓP Ý</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ====== PHẦN THANH TOÁN ====== -->
+    <div class="checkout-container">
+      <!-- CỘT TRÁI -->
+      <div class="checkout-left">
+        <h3>Thông tin thanh toán</h3>
+        <div class="form-group">
+          <label>Họ và tên *</label>
+          <input type="text" placeholder="Nhập họ và tên">
+        </div>
+        <div class="form-group">
+          <label>Số điện thoại *</label>
+          <input type="text" placeholder="Nhập số điện thoại">
+        </div>
+        <div class="form-group">
+          <label>Tỉnh/Thành phố *</label>
+          <select>
+            <option>Tp. Hồ Chí Minh</option>
+            <option>Hà Nội</option>
+            <option>Đà Nẵng</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Quận/Huyện *</label>
+          <select>
+            <option>Chọn quận/huyện</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Địa chỉ *</label>
+          <input type="text" placeholder="Số nhà, tên đường...">
+        </div>
+        <div class="address-checkbox">
+          <input type="checkbox">
+          GIAO HÀNG TỚI ĐỊA CHỈ KHÁC?
+        </div>
+        <div class="form-group">
+          <label>Ghi chú đơn hàng (tùy chọn)</label>
+          <textarea placeholder="Ghi chú đơn hàng..."></textarea>
+        </div>
+      </div>
+
+      <!-- CỘT PHẢI -->
+      <div class="checkout-right">
+        <h3>Đơn hàng của bạn</h3>
+        <div class="order-item">
+          <strong>Garden Swan - Bánh Bắp Thiên Nga Trái Cây ×1</strong>
+          <span>615.000 đ</span>
+        </div>
+        <div class="order-item">
+          <strong>Delicate Bloom - Bánh Kem Bắp Dâu - 18cm ×1</strong>
+          <span>465.000 đ</span>
+        </div>
+
+        <div class="summary">
+          <div><span>Tạm tính</span><span>1.080.000 đ</span></div>
+          <div><span>Giao hàng</span><span>25.000 đ</span></div>
+          <div style="font-size:13px;color:#666;text-align:right;">Vận chuyển đến Tp. Hồ Chí Minh</div>
+          <div class="total"><span>Tổng</span><span>1.105.000 đ</span></div>
+        </div>
+
+        <div class="payment-box">
+          <b>Thanh toán tiền mặt khi nhận hàng</b><br>
+          Bạn sẽ thanh toán trực tiếp với shipper khi nhận sản phẩm.  
+          Nếu có lỗi xảy ra, vui lòng liên hệ hotline <b>028.8888.3388</b>.
+        </div>
+
+        <button class="btn-order">ĐẶT HÀNG</button>
+        <a href="giohang.html" class="back-cart">Quay lại giỏ hàng</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

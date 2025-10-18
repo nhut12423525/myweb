@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ==== CHỈ CSS CHO PHẦN GIỎ HÀNG ==== */
+    h2 {
+      text-align: center;
+      color:  #d11b6b;
+      margin-top: 40px;
+    }
+
+    .cart-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+
+    .cart-items {
+      flex: 2;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-right: 20px;
+    }
+
+    .item-info {
+      flex: 1;
+    }
+
+    .item-info h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .item-price, .item-total {
+      width: 100px;
+      text-align: right;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+    }
+
+    .quantity button {
+      width: 25px;
+      height: 25px;
+      border: 1px solid #aaa;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .quantity span {
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .remove {
+      color: #999;
+      cursor: pointer;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+
+    .cart-summary {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      height: fit-content;
+    }
+
+    .cart-summary h3 {
+      margin-bottom: 20px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      font-size: 15px;
+    }
+
+    .summary-row.total {
+      font-weight: bold;
+      color: #d11b6b;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      background-color: #d11b6b;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .checkout-btn:hover {
+      background-color: #fff;
+      color: #d11b6b;
+      border: 2px solid #d11b6b;
+    }
+
+    .continue {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .voucher {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .voucher input {
+      flex: 1;
+      padding: 6px;
+    }
+
+    .voucher button {
+      padding: 6px 10px;
+      background-color: #ddd;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header><img src="img/logo.webp" alt="logo"></header>
+
+    <nav>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li>
+            <a href="sanpham.html">SẢN PHẨM</a>
+            <ul>
+              <li><a href="menu_hoakhaitruong.html">Hoa khai trương để bàn</a></li>
+              <li><a href="menu_hoasinhnhat.html">Hoa sinh nhật</a></li>
+              <li><a href="menu_hoahong.html">Hoa hồng</a></li>
+              <li><a href="menu_hoasen.html">Hoa sen</a></li>
+              <li><a href="menu_hoadongtien.html">Hoa đồng tiền</a></li>
+            </ul>
+          </li>
+          <li><a href="lienhe.html">LIÊN HỆ</a></li>
+          <li><a href="hoidap.html">HỎI & ĐÁP</a></li>
+          <li><a href="gopy.html">GÓP Ý</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="banner"><img src="img/backrou.webp" alt="banner"></div>
+
+    <h2>Giỏ hàng của bạn</h2>
+
+    <div class="cart-container">
+      <div class="cart-items">
+        <div class="cart-item">
+          <img src="img/h2.webp" alt="Coral Pink">
+          <div class="item-info">
+            <h3><a href="sp1.html">Coral Pink</a></h3>
+          </div>
+          <div class="item-price">490.000 đ</div>
+          <div class="quantity">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+          <div class="item-total">490.000 đ</div>
+          <div class="remove">×</div>
+        </div>
+
+        <div class="cart-item">
+          <img src="img/h1.webp" alt="Delicate Bloom">
+          <div class="item-info">
+            <h3><a href="sp2.html">Delicate Bloom - Bánh Kem Bắp Dâu</a></h3>
+          </div>
+          <div class="item-price">465.000 đ</div>
+          <div class="quantity">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+          <div class="item-total">465.000 đ</div>
+          <div class="remove">×</div>
+        </div>
+
+        <div class="voucher">
+          <input type="text" placeholder="MÃ ƯU ĐÃI">
+          <button>Áp dụng</button>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <h3>Cộng giỏ hàng</h3>
+        <div class="summary-row">
+          <span>Tạm tính</span>
+          <span>955.000 đ</span>
+        </div>
+        <hr>
+        <div class="summary-row">
+          <span>Giao hàng</span>
+          <span>25.000 đ</span>
+        </div>
+        <hr>
+        <div class="summary-row total">
+          <span>Tổng</span>
+          <span>980.000 đ</span>
+        </div>
+        <button class="checkout-btn"><a href="thanhtoan.html">Tiến hành thanh toán</a></button>
+        <a href="sp1.html" class="continue">Tiếp tục xem sản phẩm</a>
+      </div>
+    </div>
+     <footer>
+        © 2025 FlowerCorner Demo | Thiết kế bởi HTML & CSS
+    </footer>
+  </div>
+</body>
+</html>
